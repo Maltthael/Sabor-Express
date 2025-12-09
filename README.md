@@ -1,4 +1,4 @@
-What this app does?
+**What this app does?**
 
 - A menu option to navegate throuth the functions above
 
