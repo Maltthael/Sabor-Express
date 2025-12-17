@@ -26,3 +26,11 @@ class Restaurant:
     def Receive_evaluation(self, client, rating):
         evaluation = Evaluation(client, rating)
         self._evaluation.append(evaluation)
+        
+    def avg_evaluation(self):
+        if not self._evaluation:
+            return 0
+        sum_rating = sum(evaluation.rating for evaluation in self._evaluation)
+        rating_quantity = len(self._evaluation)
+        avg = round(sum_rating / rating_quantity, 1)
+        return avg
