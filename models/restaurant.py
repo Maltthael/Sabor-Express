@@ -25,14 +25,16 @@ class Restaurant:
         self._status = not self._status
     
     def Receive_evaluation(self, client, rating):
-        evaluation = Evaluation(client, rating)
-        self._evaluation.append(evaluation)
+        if  0 < rating <=5: 
+            evaluation = Evaluation(client, rating)
+            self._evaluation.append(evaluation)
+        
     
     
     @property    
     def avg_evaluation(self):
         if not self._evaluation:
-            return 0
+            return '-'
         sum_rating = sum(evaluation._rating for evaluation in self._evaluation)
         rating_quantity = len(self._evaluation)
         avg = round(sum_rating / rating_quantity, 1)
