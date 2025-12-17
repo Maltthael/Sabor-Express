@@ -1,4 +1,4 @@
-
+from models.evaluation import Evaluation
 
 class Restaurant:
     restaurants = []
@@ -6,6 +6,7 @@ class Restaurant:
         self._name = name.title()
         self._category = category.upper()
         self._status = False
+        self._evaluation = []
         Restaurant.restaurants.append(self)
     @classmethod
     def Restaurant_List(cls):
@@ -21,3 +22,7 @@ class Restaurant:
         return '☑' if self._status else '☐'
     def Alter_state(self):
         self._status = not self._status
+    
+    def Receive_evaluation(self, client, rating):
+        evaluation = Evaluation(client, rating)
+        self._evaluation.append(evaluation)
