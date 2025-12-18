@@ -1,7 +1,11 @@
 from models.restaurant import Restaurant
+from models.cardapio.drinks import Drinks
+from models.cardapio.dishes import Dish
 
 restaurant_BuguerHero = Restaurant('BurguerHero', 'FastFood')
 restaurant_BuguerHero.Alter_state()
+drink_suco = Drinks('Suco de melancia', 5.0, 'grande')
+Dish_paozinho = Dish('Paozinho',2.00,'O melhor pão da cidade')
 restaurant_BuguerHero.Receive_evaluation('Joao', 5)
 restaurant_BuguerHero.Receive_evaluation('Roberto', 5)
 restaurant_PizzaPlanet = Restaurant('PizzaPlanet', 'Italian')

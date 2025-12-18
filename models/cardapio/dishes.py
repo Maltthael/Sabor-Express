@@ -1,0 +1,9 @@
+from models.cardapio.item_cardapio import ItemCardapio
+
+class Dish:
+    def __init__(self, name, price, description):
+        super().__init__(name, price)#acessa atributos da classe ItemCardapio
+        self.description = description
+        
+    def __str__(self):
+        return self.name
