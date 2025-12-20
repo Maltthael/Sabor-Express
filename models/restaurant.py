@@ -1,4 +1,5 @@
 from models.evaluation import Evaluation
+from models.cardapio.item_cardapio import ItemCardapio
 
 class Restaurant:
     restaurants = []
@@ -40,8 +41,7 @@ class Restaurant:
         rating_quantity = len(self._evaluation)
         avg = round(sum_rating / rating_quantity, 1)
         return avg
-    def add_drinks_in_cardapio(self,Drinks):
-        self._cardapio.append(Drinks)
-        
-    def add_dish_in_cardapio(self,Dish):
-        self._cardapio.append(Dish)
+ 
+    def add_in_cardapio(self, item):
+        if isinstance (item, ItemCardapio):
+            self._cardapio.append(item)
