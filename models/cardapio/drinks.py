@@ -2,8 +2,8 @@ from models.cardapio.item_cardapio import ItemCardapio
 
 class Drinks(ItemCardapio):
     def __init__(self, name, price, size):
-        super.__init__(name, price) # acessa atributos da classe ItemCardapio
+        super().__init__(name, price) # acessa atributos da classe ItemCardapio
         self.size = size
         
     def __str__(self):
-        return self.name
+        return self._name
